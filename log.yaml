@@ -9,6 +9,7 @@ aviatrix:
   controller_account: "237763167690"
 alert:
   expect_dest_cidrs: ["0.0.0.0/0"]
+  check_gateway_existence: False
 config:
   add_vpc_cidr: False
   configure_gw_name: False
