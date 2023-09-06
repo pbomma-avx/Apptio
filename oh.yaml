@@ -1,0 +1,39 @@
+terraform:
+  terraform_output: "./discovery-output"
+  terraform_version: ">= 0.14"
+  aviatrix_provider: "~> 3.0.0"
+  aws_provider: "~> 3.43.0"
+  enable_s3_backend: False
+aviatrix:
+  controller_ip: "x.x.x.x"
+  controller_account: "237763167690"
+alert:
+  expect_dest_cidrs: ["0.0.0.0/0"]
+config:
+  add_vpc_cidr: True
+  configure_gw_name: True
+# tgw:
+#   tgw_account: "237763167690"
+#   tgw_role: "aviatrix-role-app"
+#   tgw_by_region:
+#     us-east-2: "tgw-03d8689e2bb1f6fe1"
+account_info:
+  - account_id: "237763167690"
+    account_name: "aws"
+    hpe: True
+    managed_tgw: False
+    regions:
+      - region: "us-east-2"
+        vpcs:
+          - vpc_id: "vpc-067867ca5f2b2fd74"
+            avtx_cidr: ""
+            spoke_gw_name: "OH-VPC-1-AVXGW"
+            transit_gw_name: ""
+          - vpc_id: "vpc-0d3ebd5f28f610638"
+            avtx_cidr: ""
+            spoke_gw_name: "OH-VPC-2-AVXGW"
+            transit_gw_name: ""
+switch_traffic:
+  delete_tgw_route_delay: 5
+cleanup:
+  resources: []
