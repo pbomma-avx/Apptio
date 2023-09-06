@@ -1,0 +1,3 @@
+source migration/bin/activate
+generator --config config.yaml --discovery discovery.yaml
+python3 -m dm.discovery log.yaml
